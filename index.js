@@ -34,13 +34,13 @@ async function run(){
             const text=await cursor.toArray();
             res.send(text)
         })
-        app.get('/normal/:textId',async(req,res)=>{
-            const id=req.params.offerId;
-        const query={_id:ObjectId(id),
-                   };
-        const text=await inputEnglishTextCollection.findOne(query);
-        res.json(query)
-        })
+        // app.get('/normal/:textId',async(req,res)=>{
+        //     const id=req.params.textId;
+        // const query={query
+        //            };
+        // const text=await inputEnglishTextCollection.findOne(query);
+        // res.json(query)
+        // })
         app.post('/translate/normal', async (req, res) => {
             const textInput = req.body;
                const result = await inputEnglishTextCollection.insertOne(textInput);
